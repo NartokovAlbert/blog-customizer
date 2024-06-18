@@ -1,11 +1,8 @@
 import arrow from 'src/images/arrow.svg';
-
-import { SyntheticEvent, useEffect } from 'react';
-
 import clsx from 'clsx';
 
 import styles from './ArrowButton.module.scss';
-
+import { SyntheticEvent } from 'react';
 
 /** Функция для обработки открытия/закрытия формы */
 export type ArrowButtonProps = {
@@ -17,9 +14,6 @@ export const ArrowButton = ({ onClick, isOpen }: ArrowButtonProps) => {
 	const arrowClickHandler = () => {
 		onClick?.();
 	};
-	useEffect(() => {
-		console.log('RENDER');
-	}, []);
 	return (
 		/* Не забываем указаывать role и aria-label атрибуты для интерактивных элементов */
 		<div
@@ -34,7 +28,8 @@ export const ArrowButton = ({ onClick, isOpen }: ArrowButtonProps) => {
 			<img
 				src={arrow}
 				alt='иконка стрелочки'
-				className={clsx(styles.arrow, isOpen && styles.container_open)}
+				className={clsx(styles.arrow, isOpen && styles.arrow_open)}
 			/>
 		</div>
-	);}
+	);
+};
