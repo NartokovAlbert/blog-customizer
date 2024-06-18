@@ -62,7 +62,7 @@ export const ArticleParamsForm = ({
 		onChange: setIsOpenForm,
 	});
 
-	//сабмит формы
+	//submit form
 	const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setCurrentArticleState({
@@ -75,7 +75,7 @@ export const ArticleParamsForm = ({
 		});
 	};
 
-	//ресет формы
+	//reset form
 	const formResetHandler = () => {
 		setCurrentArticleState({
 			...defaultArticleState,

@@ -1,7 +1,9 @@
 import arrow from 'src/images/arrow.svg';
+
 import clsx from 'clsx';
 
 import styles from './ArrowButton.module.scss';
+
 import { SyntheticEvent } from 'react';
 
 /** Функция для обработки открытия/закрытия формы */
