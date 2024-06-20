@@ -16,16 +16,22 @@ export const useOutsideClickClose = ({
 	useEffect(() => {
 		const handleClick = (event: MouseEvent) => {
 			const { target } = event;
+
 			if (target instanceof Node && !rootRef.current?.contains(target)) {
-				isOpen && onClose?.();
-				onChange?.(false);
+				// Если сайдбар открыт, вызываем `onClose` и `onChange`
+				if (isOpen) {
+					onClose?.();
+					onChange(false);
+				}
 			}
 		};
 
+		// Добавляем обработчик события клика
 		window.addEventListener('mousedown', handleClick);
 
+		// Удаляем event из функции очистки
 		return () => {
 			window.removeEventListener('mousedown', handleClick);
 		};
-	}, [onClose, onChange, isOpen]);
+	}, [isOpen, onClose, onChange, rootRef]);
 };

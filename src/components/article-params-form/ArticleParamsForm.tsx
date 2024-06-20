@@ -66,7 +66,6 @@ export const ArticleParamsForm = ({
 	const formSubmitHandler = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
 		setCurrentArticleState({
-			...currentArticleState,
 			fontFamilyOption: newFontFamily,
 			fontColor: newFontColor,
 			backgroundColor: newBackground,
